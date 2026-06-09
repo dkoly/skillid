@@ -87,6 +87,7 @@ The agent can do steps 1-4 for you — point it at the MCP server's tool list an
 ```
 skillid/
 ├── .claude-plugin/plugin.json    # Plugin metadata
+├── logo.svg                      # Project logo
 ├── policy.yaml                   # Source of truth — edit this
 ├── hooks/
 │   ├── hooks.json                # Routes tool calls to hook scripts
