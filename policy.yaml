@@ -1,0 +1,81 @@
+# Skillid Policy Configuration
+# This file is the single source of truth for org agent guardrails.
+# Edit directly or let the agent draft changes for review.
+
+schema_version: "1.0"
+
+org:
+  name: "ACME"
+  short_name: "acme"
+  domain: "acme.com"
+  escalation_contact: "security-team@acme.com"
+  audit:
+    mode: "file"  # file | http_post | stdout | none
+    endpoint: null  # URL for http_post mode
+    log_path: "~/.skillid/audit.log"  # for file mode
+
+policy:
+  # General behavioral guardrails
+  ai_self_disclosure: true          # Agent must identify as AI in external comms
+  external_comms_require_confirm: true  # Confirm before sending emails, messages, etc.
+  destructive_ops_require_confirm: true # Confirm before delete, overwrite, etc.
+  bulk_operation_threshold: 5       # Ask before bulk ops exceeding this count
+  business_hours_only: false        # Restrict operations to business hours
+  custom_guidance: ""               # Free-text org-specific guidance injected into skills
+
+connectors:
+  atlassian:
+    enabled: true
+    site_url: "acme.atlassian.net"
+
+    jira:
+      project_modes:
+        default: "read_write"
+        # Per-project overrides:
+        # read_write  — full access (subject to other flags)
+        # read_only   — reads allowed, all writes blocked
+        # read_redacted — reads allowed but content replaced with [REDACTED]
+        # blocked     — all access denied
+        overrides:
+          LEGAL: "blocked"
+          HR: "blocked"
+          SEC: "read_only"
+          FINEXEC: "read_only"
+
+      operations:
+        allow_create: true
+        allow_comment: true
+        allow_transition: true
+        allow_assign: false
+        allow_priority_change: false
+        allow_delete: false
+        allow_bulk: false
+        bulk_threshold: 5
+
+      confirmations:
+        before_create: true
+        before_transition: true
+        before_comment: false
+
+    confluence:
+      space_modes:
+        default: "read_write"
+        overrides:
+          LEGAL: "read_only"
+          HR: "read_only"
+          BOARD: "blocked"
+          SEC: "read_redacted"
+          FINEXEC: "read_only"
+
+      operations:
+        allow_create: true
+        allow_edit: true
+        allow_edit_others: false
+        allow_delete: false
+        allow_set_public: false
+        allow_comment: true
+
+      confirmations:
+        before_create: true
+        before_edit: false
+        before_publish: true

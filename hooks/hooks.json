@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__atlassian__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/hooks/pre_tool_use.py"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mcp__atlassian__getJiraIssue|mcp__atlassian__searchJiraIssues|mcp__atlassian__getConfluencePage|mcp__atlassian__searchConfluence|mcp__atlassian__getJiraIssueComments|mcp__atlassian__getConfluencePageComments",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/hooks/post_tool_read.py"
+          }
+        ]
+      }
+    ]
+  }
+}

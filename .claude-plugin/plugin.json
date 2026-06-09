@@ -1,0 +1,6 @@
+{
+  "name": "skillid",
+  "version": "0.1.0",
+  "description": "Organization agent guardrails — policy-driven skills and hooks for Claude Code",
+  "author": { "name": "Security Team" }
+}
