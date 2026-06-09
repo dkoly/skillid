@@ -16,7 +16,7 @@ This is a Claude Code plugin that enforces org-level agent guardrails via policy
 
 ## Key design principles
 
-1. **Fail-closed**: unknown tools in a known connector → denied. Can't extract resource key on a write → ask for confirmation.
+1. **Fail-closed**: unknown tools in a known connector → denied. Unresolvable reads/writes → denied, except explicit list/enumeration operations.
 2. **Single generic hook**: `pre_tool_use.py` handles all connectors via the registry. Don't create per-tool hook scripts.
 3. **Policy as data**: all rules live in `policy.yaml`. Hook logic is generic.
 4. **Skills are concise**: under 600 tokens each. Model gets awareness; hooks do enforcement.
@@ -28,7 +28,7 @@ This is a Claude Code plugin that enforces org-level agent guardrails via policy
 |------|-------|--------|---------------------|
 | `read_write` | ✅ | ✅ | Yes |
 | `read_only` | ✅ | ❌ denied | Yes |
-| `read_redacted` | ✅ (redacted) | ❌ denied | No — replaced with [REDACTED] |
+| `read_redacted` | ✅ (redacted) | ❌ denied | PostToolUse attempts replacement; not true isolation |
 | `blocked` | ❌ denied | ❌ denied | No |
 
 ## Testing
