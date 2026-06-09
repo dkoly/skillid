@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.svg" width="160" alt="Skillid logo">
+</p>
+
 # Skillid — Org Agent Guardrails Plugin
 
 Policy-driven Claude Code plugin that enforces organization guardrails via skills (guidance) and hooks (enforcement).
