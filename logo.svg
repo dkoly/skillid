@@ -1,58 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
-  <defs>
-    <linearGradient id="shieldGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1e3a5f"/>
-      <stop offset="100%" stop-color="#0f2440"/>
-    </linearGradient>
-    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#00d4aa"/>
-      <stop offset="100%" stop-color="#0099cc"/>
-    </linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img">
+  <title>Skillid logo</title>
+  <desc>Cast iron skillet with shield and checkmark embossed, with skillid wordmark below</desc>
 
-  <!-- Shield body -->
-  <path d="M256 28 L462 120 L462 260 C462 370 370 460 256 492 C142 460 50 370 50 260 L50 120 Z"
-        fill="url(#shieldGrad)" stroke="url(#accentGrad)" stroke-width="6"/>
+  <!-- Handle pointing left -->
+  <rect x="18" y="163" width="80" height="26" rx="13" fill="#2c2c2c"/>
+  <rect x="18" y="171" width="80" height="10" rx="5" fill="#c0522a"/>
+  <circle cx="40" cy="176" r="5" fill="#1a1a1a"/>
+  <circle cx="40" cy="176" r="2.5" fill="#555"/>
 
-  <!-- Inner shield highlight -->
-  <path d="M256 60 L432 140 L432 255 C432 350 350 430 256 458 C162 430 80 350 80 255 L80 140 Z"
-        fill="none" stroke="url(#accentGrad)" stroke-width="2" opacity="0.3"/>
+  <!-- Connection collar -->
+  <rect x="92" y="159" width="16" height="34" rx="4" fill="#222"/>
 
-  <!-- Circuit/node pattern - central node -->
-  <circle cx="256" cy="240" r="32" fill="url(#accentGrad)"/>
-  <circle cx="256" cy="240" r="18" fill="#0f2440"/>
-  <circle cx="256" cy="240" r="8" fill="url(#accentGrad)"/>
+  <!-- Pan outer body -->
+  <circle cx="210" cy="176" r="105" fill="#2c2c2c"/>
+  <circle cx="210" cy="176" r="105" fill="none" stroke="#1a1a1a" stroke-width="6"/>
+  <!-- Pan inner cooking surface -->
+  <circle cx="210" cy="176" r="90" fill="#3a3a3a"/>
+  <!-- Sheen arc -->
+  <path d="M 132 146 A 80 80 0 0 1 174 132" fill="none" stroke="#505050" stroke-width="6" stroke-linecap="round"/>
 
-  <!-- Top node -->
-  <line x1="256" y1="208" x2="256" y2="148" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="256" cy="140" r="14" fill="url(#accentGrad)"/>
-  <circle cx="256" cy="140" r="6" fill="#0f2440"/>
+  <!-- Shield embossed -->
+  <path d="M 210 136 L 244 148 L 244 173 Q 244 200 210 212 Q 176 200 176 173 L 176 148 Z" fill="none" stroke="#c0522a" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Checkmark -->
+  <polyline points="194,175 207,188 228,160" fill="none" stroke="#c0522a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- Bottom node -->
-  <line x1="256" y1="272" x2="256" y2="340" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="256" cy="348" r="14" fill="url(#accentGrad)"/>
-  <circle cx="256" cy="348" r="6" fill="#0f2440"/>
+  <!-- Wordmark centered -->
+  <text x="200" y="330" font-family="Arial, sans-serif" font-size="42" font-weight="400" fill="#2c2c2c" text-anchor="middle">skill<tspan font-weight="700" fill="#c0522a">id</tspan></text>
 
-  <!-- Left node -->
-  <line x1="224" y1="240" x2="160" y2="200" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="152" cy="196" r="14" fill="url(#accentGrad)"/>
-  <circle cx="152" cy="196" r="6" fill="#0f2440"/>
+  <!-- Tagline -->
+  <text x="200" y="358" font-family="Arial, sans-serif" font-size="11" fill="#888" text-anchor="middle" letter-spacing="2.5">ORG POLICY GENERATOR</text>
 
-  <!-- Right node -->
-  <line x1="288" y1="240" x2="352" y2="200" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="360" cy="196" r="14" fill="url(#accentGrad)"/>
-  <circle cx="360" cy="196" r="6" fill="#0f2440"/>
-
-  <!-- Bottom-left node -->
-  <line x1="236" y1="265" x2="175" y2="310" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="168" cy="316" r="14" fill="url(#accentGrad)"/>
-  <circle cx="168" cy="316" r="6" fill="#0f2440"/>
-
-  <!-- Bottom-right node -->
-  <line x1="276" y1="265" x2="337" y2="310" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="344" cy="316" r="14" fill="url(#accentGrad)"/>
-  <circle cx="344" cy="316" r="6" fill="#0f2440"/>
-
-  <!-- Checkmark overlay (subtle, in center node) -->
-  <path d="M244 240 L253 249 L270 230" stroke="#0f2440" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>
